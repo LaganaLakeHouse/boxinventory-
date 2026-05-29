@@ -294,11 +294,9 @@ function drawQR(canvas, text, size) {
 
 // Helper: get QR data string (trimmed to fit if needed)
 function qrData(c) {
-  var full = JSON.stringify({id:c.id, name:c.name, location:c.location||'', desc:c.desc||'', items:c.items});
-  if (full.length < 800) return full;
-  // Trim items to fit
-  var short = JSON.stringify({id:c.id, name:c.name, location:c.location||'', items:c.items.slice(0,20)});
-  return short;
+  var short = JSON.stringify({id:c.id, name:c.name, location:c.location||'', items:c.items.slice(0,10)});
+  if (short.length < 500) return short;
+  return JSON.stringify({id:c.id, name:c.name, items:c.items.slice(0,5)});
 }
 
 // ─── App State ───────────────────────────────────────────────────────────────
