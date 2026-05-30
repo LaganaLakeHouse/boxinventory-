@@ -249,7 +249,7 @@ return{draw:function(canvas,text,size){size=size||200;canvas.width=size;canvas.h
 })();
 
 function qrData(c) {
-  var txt = c.name + ' - ' + (c.location||'') + ' - ' + c.items.join(', ');
+var txt = c.name + ' - ' + (c.location||'');
   return txt;
 }
 
